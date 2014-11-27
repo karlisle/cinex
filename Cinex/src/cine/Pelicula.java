@@ -39,6 +39,6 @@ public class Pelicula
 	@Override
 	public String toString()
 	{
-		return "La pelicula "+ titulo + " dirigida por, " + director + "\nes una hobra maestra, de "+duracion+ " minutos!\n"; 
+		return "La pelicula "+ titulo + " dirigida por, " + director + "\nes una hobra maestra, de "+duracion+ " minutos!\nDisfrutala por solo "+ costo+"!!\n"; 
 	}
 }

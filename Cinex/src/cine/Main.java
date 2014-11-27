@@ -11,7 +11,7 @@ public class Main {
 		// menuEntrada menu = new menuEntrada("Star Trek Into Darkness", "J.J. Abrams", 132, 50, 1);
 		// System.out.println(menu.toString());
 		
-		menuEntrada menu = new menuEntrada(null, null, 0, 0, 0);
+		menuEntrada menu = new menuEntrada(null, null, 0, 0);
 		menu.menuPrincipal();
 		
 		

@@ -14,25 +14,28 @@ public class estreno extends Pelicula
 	{
 		String pelicula1 [][] = {
 								{"Interestelar", "Cristopher Nolan", "180", "50"},
-								{"Star Trek Into Darkness", "J.J. Abrams", "132", "50"}
+								{"Star Trek Into Darkness", "J.J. Abrams", "132", "50"},
+								{"El extraño mundo de jack", "Tim Burton", "130", "60"}
 								};		
 
-		/*
-		super.titulo = pelicula1[0];
-		super.director = pelicula1[1];
-		super.duracion = Integer.parseInt(pelicula1[2]);
-		*/
 		int len = pelicula1.length;
-		for(int x = 0; x <= len; x++)
-		{	
-			int op = x +1;
-			System.out.println("Opcion: " + op );
-			for(int y = 0; y <= 3; y++)
+		int tope = 0;
+		for(int i=0; i<=len; i++)
+		{
+			super.titulo = pelicula1[i][0];
+			super.director = pelicula1[i][1];
+			super.duracion = Integer.parseInt(pelicula1[i][2]);
+			super.costo = Integer.parseInt(pelicula1[i][3]);			
+			
+			if(i == tope)
 			{
-				System.out.println(pelicula1[x][y]);
+				int opt = len - i;
+				System.out.println("Opcion: "+ opt );
+				System.out.println(super.toString());
+				tope += 1;
 				
 			}
-			System.out.println("\n");
+			
 		}
 		
 		return null;

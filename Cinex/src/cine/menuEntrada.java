@@ -8,11 +8,11 @@ public class menuEntrada extends Pelicula
 	protected int opcion;
 	
 	
-	public menuEntrada(String titulo, String director, int duracion, int costo, int opcion) 
+	public menuEntrada(String titulo, String director, int duracion, int costo) 
 	{
 		super(titulo, director, duracion, costo);
 		// TODO Auto-generated constructor stub
-		this.opcion = opcion;
+		
 	}
 
 	void menuPrincipal()
