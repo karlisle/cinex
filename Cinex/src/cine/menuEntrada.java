@@ -1,13 +1,18 @@
 package cine;
 
+import java.util.Scanner;
+
 public class menuEntrada extends Pelicula
 {
 	
+	protected int opcion;
 	
-	public menuEntrada(String titulo, String director, String duracion, int costo) 
+	
+	public menuEntrada(String titulo, String director, int duracion, int costo, int opcion) 
 	{
 		super(titulo, director, duracion, costo);
 		// TODO Auto-generated constructor stub
+		this.opcion = opcion;
 	}
 
 	void menuPrincipal()
@@ -26,11 +31,35 @@ public class menuEntrada extends Pelicula
 	}
 	
 	/*
-	 * Leemos la entrada desde el teclado de la selección que ha hecho el usuario. 
+	 * Leemos la entrada desde el teclado de la selección que ha hecho el usuario.
+	 * Esto es un metodo de servicio ;) 
 	 */
-	void elegir()
+	private void elegir()
 	{
-				
+		Scanner leer = new Scanner(System.in);
+		
+		System.out.println("Seleccione su opcion: \n ");
+		
+		opcion = leer.nextInt();
+		leer.close();
+	
+	}
+	
+	@Override
+	public String toString()
+	{
+		return super.toString()+  " y es un  estreno";
 	}
 
 }
+
+
+
+
+
+
+
+
+
+
+

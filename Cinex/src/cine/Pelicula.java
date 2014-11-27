@@ -6,10 +6,10 @@ public class Pelicula
 	
 	protected String titulo;
 	protected String director;
-	protected String duracion;
+	protected int duracion;
 	protected int 	 costo;
 		
-	public Pelicula(String titulo, String director, String duracion, int costo)
+	public Pelicula(String titulo, String director, int duracion, int costo)
 	{	
 		this.titulo = titulo;
 		this.director = director;
@@ -17,18 +17,15 @@ public class Pelicula
 		this.costo = costo;
 	}
 	
+	
 	/*
-	 * Construimos un menu, con las peliculas en cartelera
+	 * Descripcion de la clase, Pelicula
+	 * (non-Javadoc)
+	 * @see java.lang.Object#toString()
 	 */
-	void menu(int opcion)
+	@Override
+	public String toString()
 	{
-		if (opcion == 1) 
-		{
-			System.out.println("Ver cartelera de estreno!");			
-		} 
-		else if(opcion == 2)
-		{
-			System.out.println("Ver Cartelera general!");
-		}		
+		return "La pelicula "+ titulo + " dirigida por, " + director + "\nes una hobra maestra, de "+duracion+ " minutos!\n"; 
 	}
 }
