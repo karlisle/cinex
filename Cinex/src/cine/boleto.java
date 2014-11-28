@@ -27,6 +27,10 @@ public class boleto extends Pelicula
 		System.out.println("*******************************");
 		
 	}
+	public void boletoGolosina()
+	{
+				
+	}
 	
 	@Override
 	public String toString()

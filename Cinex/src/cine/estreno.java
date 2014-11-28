@@ -11,9 +11,8 @@ import java.util.Scanner;
 
 public class estreno extends Pelicula
 {	
-	Scanner leer = new Scanner(System.in);
-	
-	int opt;
+	Scanner leer = new Scanner(System.in);										// Hacemos una instancia de Scanner
+	int opt;																	// Variable en la que se almacena la lectura
 	
 	
 	String pelicula1 [][] = {													

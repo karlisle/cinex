@@ -45,7 +45,7 @@ public class menuEntrada extends Pelicula
 																						// Cerramos la lectura de datos
 		
 		estreno ver = new estreno(null, null, 0, 0);												// Instanciamos  la clase estrenos.
-		
+		Golosinas golosina = new Golosinas();											// Creamos una instancia de Golosinas
 	
 		
 		// Comenzamos a comparar la opcion seleccionada.
@@ -65,20 +65,12 @@ public class menuEntrada extends Pelicula
 		else if (opcion == 3)
 		{
 			System.out.println("Ok, ahora se listaran las golosinas!");
-			System.out.println("Regresando al menú principal.");	
+			
+			golosina.cargar();
+			
+				
 		}
 	}
 
 
 }
-
-
-
-
-
-
-
-
-
-
-
