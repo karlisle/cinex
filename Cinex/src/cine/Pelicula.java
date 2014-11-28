@@ -1,6 +1,7 @@
 package cine;
 
 
+
 /*
  * Esta clase es una clase padre o super clase, de ella heredaran algunas otras.
  * Se definen los datos generales de la pelicula, asi como una descripcion de la misma.
@@ -22,12 +23,13 @@ public class Pelicula
 	 */
 	public Pelicula(String titulo, String director, int duracion, int costo)
 	{	
+		// asignamos los valores recividos, a las variables locales.
 		this.titulo = titulo;
 		this.director = director;
 		this.duracion = duracion;
 		this.costo = costo;
 	}
-	
+		
 	
 	/*
 	 * Descripcion de la clase, Pelicula este metodo nos retorna una cadena(String) con la descripcion,
@@ -36,9 +38,9 @@ public class Pelicula
 	 * @see java.lang.Object#toString()
 	 */
 	
-	@Override
+	@Override	
 	public String toString()
 	{
-		return "La pelicula "+ titulo + " dirigida por, " + director + "\nes una hobra maestra, de "+duracion+ " minutos!\nDisfrutala por solo "+ costo+"!!\n"; 
+		return "La pelicula "+ titulo + " dirigida por, " + director + "\nes una hobra maestra, de "+duracion+ " minutos!\n"; 
 	}
 }

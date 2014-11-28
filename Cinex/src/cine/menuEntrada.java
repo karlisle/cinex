@@ -6,6 +6,7 @@ public class menuEntrada extends Pelicula
 {
 	
 	protected int opcion;
+	Scanner lectura = new Scanner(System.in);
 	
 	
 	public menuEntrada(String titulo, String director, int duracion, int costo) 
@@ -28,57 +29,46 @@ public class menuEntrada extends Pelicula
 		System.out.println("# 3- Comprar golosinas :D!  #");
 		System.out.println("#                           #");
 		System.out.println("#############################");
-		
-		elegir();																	// Llamamos al metodo elegir, con el cual seleccionamos una opción.
 	}
 	
 	/*
 	 * Leemos la entrada desde el teclado de la selección que ha hecho el usuario.
 	 * Esto es un metodo de servicio ;) 
 	 */
-	private void elegir()
+	public void elegir()
 	{
-		Scanner leer = new Scanner(System.in);														// Cremos una instancia de Scanner
+		menuPrincipal();
 		
 		System.out.println("Seleccione su opcion: \n ");
 		
-		opcion = leer.nextInt();																	// Leemos la opcion del usuario.
-		leer.close();																				// Cerramos la lectura de datos
+		opcion = lectura.nextInt();																	// Leemos la opcion del usuario.
+																						// Cerramos la lectura de datos
 		
-		estreno ver = new estreno(null, null, 0, 0);
+		estreno ver = new estreno(null, null, 0, 0);												// Instanciamos  la clase estrenos.
 		
+	
 		
+		// Comenzamos a comparar la opcion seleccionada.
 		if (opcion == 1) 
 		{
 			System.out.println("Ok, ahora se listaran los estrenos!\n");
-			ver.etrenos();
-			//System.out.println(super.toString());
+			ver.estrenos();															// Se llama al metodo estrenos() de la clase estreno
+			ver.selPeli();
 			
-					
+			
 		}
 		else if (opcion == 2)
 		{
 			System.out.println("Ok, ahora se listara toda la cartelera!");
-			
-			
 			System.out.println("Regresando al menú principal.");
-			
 		}
 		else if (opcion == 3)
 		{
 			System.out.println("Ok, ahora se listaran las golosinas!");
-			
-			System.out.println("Regresando al menú principal.");
-			
+			System.out.println("Regresando al menú principal.");	
 		}
-	
 	}
-	
-	@Override
-	public String toString()
-	{
-		return super.toString()+  " y es un  estreno";
-	}
+
 
 }
 

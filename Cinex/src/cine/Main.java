@@ -12,10 +12,10 @@ public class Main {
 		// System.out.println(menu.toString());
 		
 		menuEntrada menu = new menuEntrada(null, null, 0, 0);
-		menu.menuPrincipal();
+		//menu.menuPrincipal();
+		menu.elegir();
 		
 		
-
 	}
 
 }
