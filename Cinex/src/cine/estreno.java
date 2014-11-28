@@ -13,7 +13,8 @@ public class estreno extends Pelicula
 {	
 	Scanner leer = new Scanner(System.in);										// Hacemos una instancia de Scanner
 	int opt;																	// Variable en la que se almacena la lectura
-	
+	Eleccion elegir = new Eleccion();											// Instanciamos la clase Elección
+	menuEntrada mn = new menuEntrada(null, null, 0, 0);							// Instaniciamos la clase menuEntrada
 	
 	String pelicula1 [][] = {													
 			{"Interestelar", "Cristopher Nolan", "180", "50"},
@@ -65,7 +66,7 @@ public class estreno extends Pelicula
 	
 	public void selPeli()
 	{
-		
+		estrenos();																				// Mostramos el menu de estrenos	
 		System.out.println("\n\n\n\nSelecione su pelicula!\n");
 		
 		
@@ -74,9 +75,8 @@ public class estreno extends Pelicula
 		System.out.print("Cargando datos de la pelicula: \n'"+ pelicula1[opt][0]+"'\n\n");
 		
 		System.out.println("\t¿Desea continuar?\n");
-		System.out.println("\t 1 - Continuar. \n\t 0 - Cancelar.");
 		
-		opt = leer.nextInt();
+		opt = elegir.sino();
 		
 		if(opt== 1)
 		{
@@ -85,12 +85,25 @@ public class estreno extends Pelicula
 			// correspondientes a la pelicula seleccionada
 			boleto tkt = new boleto(pelicula1[opt][0], pelicula1[opt][1], Integer.parseInt(pelicula1[opt][2]), Integer.parseInt(pelicula1[opt][3]));
 			// Usando el objeto tkt(ticket), llamamos al metodo boletoPelicula
-			tkt.boletoPelicula();			
-		}
-		else if(opt == 0)
-		{	System.out.println("Regresando al menu previo!");
-			menuEntrada mn = new menuEntrada(null, null, 0, 0);				
+			tkt.boletoPelicula();
+			// Llamamos recursivamente al metodo elegir de la clase menuEntrada
 			mn.elegir();
+			
+		}
+		else if(opt == 2)
+		{	
+			System.out.println("Regresando al menu previo!");		
+			mn.elegir();
+		}
+		else if(opt == 3)
+		{
+			System.out.println("Regresando al menu principal!");
+			mn.elegir();
+		}
+		else if(opt != 0 || opt != 1 || opt != 3)
+		{
+			System.out.println("\n\n\n\n Opcion no valida!\n Intentelo nuevamente\n\n\n");
+			selPeli();
 		}
 		
 		

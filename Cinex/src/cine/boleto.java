@@ -18,7 +18,7 @@ public class boleto extends Pelicula
 		{
 			System.out.println("*******************************");
 		}
-		System.out.println("\nUn momento, se esta \ngeneranodo su ticket!\n");
+		System.out.println("\n Su ticket se está generanodo\n Espere un momento!\n");
 		System.out.println("*******************************");
 		System.out.println("* Titulo: "+ titulo);
 		System.out.println("* Duración:"+ director);

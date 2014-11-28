@@ -52,7 +52,6 @@ public class menuEntrada extends Pelicula
 		if (opcion == 1) 
 		{
 			System.out.println("Ok, ahora se listaran los estrenos!\n");
-			ver.estrenos();															// Se llama al metodo estrenos() de la clase estreno
 			ver.selPeli();
 			
 			

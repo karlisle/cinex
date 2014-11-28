@@ -10,8 +10,15 @@ public class Eleccion
 	
 	public int elegir()
 	{
+		try
+		{
 		System.out.println("Seleccione una de las opcion del menú:");
 		opt = leer.nextInt();
+		}
+		catch(Exception e)
+		{
+			System.out.println("Erro: "+e);
+		}
 		return opt;
 		
 	}
@@ -23,10 +30,17 @@ public class Eleccion
 	 */
 	public int sino()
 	{
-		
+		try
+		{
 		System.out.println("Seleccione:\n 1- continuar. \n 2- Cancelar. \n 3- Terminar");
 		opt = leer.nextInt();
+		}
+		catch(Exception e)
+		{
+			System.out.println("Error: "+ e);
+		}
 		return opt;
+		
 	}
 	
 }
