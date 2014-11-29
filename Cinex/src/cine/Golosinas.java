@@ -1,5 +1,8 @@
 package cine;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+
 public class Golosinas 
 {
 	// Array en que contendra los datos de lasgolosinas
@@ -16,10 +19,12 @@ public class Golosinas
 	protected String descripcion;
 	protected int precio;
 	
+	ArrayList<String> compra = new ArrayList<>();											// Declaramos una instancia de ArrayList, u array dinámico
+	
 	private Eleccion elegir = new Eleccion();												// Hacemos una instancia de la clase elegir
 	protected int opt;																		// Aqui se almacena la eleccion.
 	private menuEntrada mn = new menuEntrada(null, null, 0, 0);								// Instanciamos la clase menuEntrada
-	
+	private boleto tkt = new boleto(null, null, 0, 0);										// Instanciamos la clase boleto
 	
 	protected void golosina()
 	{
@@ -48,14 +53,21 @@ public class Golosinas
 		
 		opt = elegir.elegir();																			// Llamamos al metodo elegir de la clase Eleccion
 		System.out.println("Ok, ha seleccionado: "+golosinas[opt][0]+"!\n");								// Indicamos que producto se ha seleccionado
+		compra.add(golosinas[opt][0]);
+		compra.add(golosinas[opt][3]);
+		
 		
 		System.out.println("¿Cargar a la cuenta?");
+		System.out.println("Seleccione 3, para terminar de comprar!");
+		
 		opt = elegir.sino();																			// Llamamos al metodo sino de la case Eleccion
+		
 		
 		if(opt == 1)																					// Comparamos el resultado de la eleccion
 		{
 			System.out.println("Ok, el producto se cargara en la cuenta");
 			// Cargar el total y la opción
+			
 			
 			System.out.println("¿Seguir comprando?");
 			opt = elegir.sino();																		// Nuevamente llamamos al metodo sino.			
@@ -72,8 +84,11 @@ public class Golosinas
 			}
 			else if(opt == 3)
 			{
-				System.out.println("Regresando al menú principal!");
-				mn.elegir();
+				System.out.println("Generando su ticket de pago.\n Espere!!");						
+				System.out.println(compra);
+				System.out.println("Regresando al menú principal!");				
+				mn.elegir(); 																				// Llamamos al metodo elegir de la clase menuEntrada
+				
 			}
 		}
 		else if(opt == 2)																				// Si se elige no cargar a la cuenta, regresamos al menu golosinas
@@ -84,16 +99,14 @@ public class Golosinas
 		
 		else if(opt == 3)																				// Si la elección fue terminar 0 '3', regresamos al menu principal
 		{
-			System.out.println("Regresando al menú principal!");
-			System.out.println("Generando su ticket de pago.\nPor favor espere");
-			
+			System.out.println("Generando su ticket de pago.\n Espere!!");						
+			System.out.println(compra);
+			System.out.println("Regresando al menú principal!");				
 			mn.elegir(); 																				// Llamamos al metodo elegir de la clase menuEntrada
+				
 		}
-		
 	}
-	
-	
-	
+		
 	@Override
 	public String toString()
 	{

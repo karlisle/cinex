@@ -12,7 +12,7 @@ public class Eleccion
 	{
 		try
 		{
-		System.out.println("Seleccione una de las opcion del menú:");
+		System.out.println("\nSeleccione una de las opcion del menú:");
 		opt = leer.nextInt();
 		}
 		catch(Exception e)
@@ -32,7 +32,7 @@ public class Eleccion
 	{
 		try
 		{
-		System.out.println("Seleccione:\n 1- continuar. \n 2- Cancelar. \n 3- Terminar");
+		System.out.println("\nSeleccione:\n 1- continuar. \n 2- Cancelar. \n 3- Terminar");
 		opt = leer.nextInt();
 		}
 		catch(Exception e)

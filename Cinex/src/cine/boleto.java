@@ -1,5 +1,8 @@
 package cine;
 
+import java.util.ArrayList;
+
+
 
 public class boleto extends Pelicula
 {
@@ -27,8 +30,9 @@ public class boleto extends Pelicula
 		System.out.println("*******************************");
 		
 	}
-	public void boletoGolosina()
+	public void boletoGolosina(ArrayList<String> compra)
 	{
+		System.out.println(compra);
 				
 	}
 	
