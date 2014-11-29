@@ -32,7 +32,19 @@ public class boleto extends Pelicula
 	}
 	public void boletoGolosina(ArrayList<String> compra)
 	{
-		System.out.println(compra);
+		int len = compra.size()-1;
+		int aux = 0;
+		String producto;
+		String precio;
+		System.out.println("**************************");
+		for(int i =1; i<len; i++)
+		{
+			producto = compra.get(aux);
+			precio = compra.get(aux+1);
+			aux += i;
+			System.out.println("\n Producto: "+ producto +"\n"+"Precio: "+ precio+"\n");
+		}
+		System.out.println("**************************");
 				
 	}
 	

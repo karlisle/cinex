@@ -1,7 +1,7 @@
 package cine;
 
 import java.util.ArrayList;
-import java.util.Iterator;
+
 
 public class Golosinas 
 {
@@ -19,7 +19,7 @@ public class Golosinas
 	protected String descripcion;
 	protected int precio;
 	
-	ArrayList<String> compra = new ArrayList<>();											// Declaramos una instancia de ArrayList, u array dinámico
+	ArrayList<String> compra = new ArrayList<String>();											// Declaramos una instancia de ArrayList, u array dinámico
 	
 	private Eleccion elegir = new Eleccion();												// Hacemos una instancia de la clase elegir
 	protected int opt;																		// Aqui se almacena la eleccion.
@@ -85,7 +85,8 @@ public class Golosinas
 			else if(opt == 3)
 			{
 				System.out.println("Generando su ticket de pago.\n Espere!!");						
-				System.out.println(compra);
+				//System.out.println(compra);
+				tkt.boletoGolosina(compra);
 				System.out.println("Regresando al menú principal!");				
 				mn.elegir(); 																				// Llamamos al metodo elegir de la clase menuEntrada
 				
@@ -100,7 +101,8 @@ public class Golosinas
 		else if(opt == 3)																				// Si la elección fue terminar 0 '3', regresamos al menu principal
 		{
 			System.out.println("Generando su ticket de pago.\n Espere!!");						
-			System.out.println(compra);
+			//System.out.println(compra);
+			tkt.boletoGolosina(compra);
 			System.out.println("Regresando al menú principal!");				
 			mn.elegir(); 																				// Llamamos al metodo elegir de la clase menuEntrada
 				
