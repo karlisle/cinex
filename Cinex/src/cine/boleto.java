@@ -42,6 +42,7 @@ public class boleto extends Pelicula
 			producto = compra.get(aux);
 			precio = compra.get(aux+1);
 			aux += i;
+			
 			System.out.println("\n Producto: "+ producto +"\n"+"Precio: "+ precio+"\n");
 		}
 		System.out.println("**************************");

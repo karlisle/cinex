@@ -6,7 +6,7 @@ public class Main {
 		// TODO Auto-generated method stub
 		
 		menuEntrada menu = new menuEntrada(null, null, 0, 0);
-		menu.elegir();		
+		menu.verMenu();		
 	}
 
 }

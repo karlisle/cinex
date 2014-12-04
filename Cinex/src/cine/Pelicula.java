@@ -11,7 +11,7 @@ public class Pelicula
 {
 																			// Estas variables son accesibles solo desde las clases hijas
 																			// Por eso el modificador 'protected'
-	protected int opcion;											        // No tiene un uso actualmente, a fututoi quizá
+	protected int opcion;											        // No tiene un uso actualmente, a futuro quizá
 
 	protected String titulo;										        // Titulo de la pelicula.
 	protected String director;												// Nombre del director.

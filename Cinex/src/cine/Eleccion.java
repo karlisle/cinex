@@ -12,7 +12,7 @@ public class Eleccion
 	{
 		try
 		{
-		System.out.println("\nSeleccione una de las opcion del menú:");
+		System.out.println("\nSeleccione del menú:");
 		opt = leer.nextInt();
 		}
 		catch(Exception e)
@@ -40,7 +40,7 @@ public class Eleccion
 			System.out.println("Error: "+ e);
 		}
 		return opt;
-		
 	}
+	
 	
 }

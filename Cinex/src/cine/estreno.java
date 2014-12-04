@@ -1,6 +1,5 @@
 package cine;
 
-import java.util.Scanner;
 
 
 /*
@@ -11,10 +10,10 @@ import java.util.Scanner;
 
 public class estreno extends Pelicula
 {	
-	Scanner leer = new Scanner(System.in);										// Hacemos una instancia de Scanner
+	
 	int opt;																	// Variable en la que se almacena la lectura
-	Eleccion elegir = new Eleccion();											// Instanciamos la clase Elección
-	menuEntrada mn = new menuEntrada(null, null, 0, 0);							// Instaniciamos la clase menuEntrada
+	Eleccion leer = new Eleccion();											    // Instanciamos la clase Elección
+	//menuEntrada mE = new menuEntrada(null, null, 0, 0);							// Instaniciamos la clase menuEntrada
 	
 	String pelicula1 [][] = {													
 			{"Interestelar", "Cristopher Nolan", "180", "50"},
@@ -64,51 +63,66 @@ public class estreno extends Pelicula
 					
 	}
 	
-	public void selPeli()
+	public void selectPeli()
 	{
+		menuEntrada mE = new menuEntrada(null, null, 0, 0);				   						// Instaniciamos la clase menuEntrada
+		
 		estrenos();																				// Mostramos el menu de estrenos	
-		System.out.println("\n\n\n\nSelecione su pelicula!\n");
+		
+		System.out.println("\n\nSelecione su pelicula!\n");
+				
+		opt = leer.elegir();																	// Llamamos al metodo elegir de la clase Eleccion
+		
+		System.out.print("Cargando datos de la pelicula: \n'"+ pelicula1[opt][0]+"'\n\n");		// Usamos el valor de que se ha retornado para mostrar el 
+																								// nombre de la pelicula que selecionamos
+		
+		System.out.println("\t¿Desea continuar?\n");											// En este punto decimos si continuar y generar el ticket
+																								// cancelar o terminar y regresar al menu principal
+		
+		opt = leer.sino();																	// Llamamos al metodo 'sino' de la clase Eleccion
 		
 		
-		opt = leer.nextInt();
-		
-		System.out.print("Cargando datos de la pelicula: \n'"+ pelicula1[opt][0]+"'\n\n");
-		
-		System.out.println("\t¿Desea continuar?\n");
-		
-		opt = elegir.sino();
-		
+		/*
+		 * Si la opción seleccionada fue la de continuar se realizan las operaciones del primer 'else-if'
+		 */
 		if(opt== 1)
 		{
-			
+
 			// Instanciamos la clase boleto, y le pasamos los parametros de la pelicula
 			// correspondientes a la pelicula seleccionada
 			boleto tkt = new boleto(pelicula1[opt][0], pelicula1[opt][1], Integer.parseInt(pelicula1[opt][2]), Integer.parseInt(pelicula1[opt][3]));
-			// Usando el objeto tkt(ticket), llamamos al metodo boletoPelicula
-			tkt.boletoPelicula();
-			// Llamamos recursivamente al metodo elegir de la clase menuEntrada
-			mn.elegir();
 			
+			tkt.boletoPelicula();																// Usando el objeto tkt(ticket), llamamos al metodo boletoPelicula
+																								// una vez que se ha generado el ticket se muestra de nuevo el menu principal
+			mE.verMenu();																		// Llamamos recursivamente al metodo elegir de la clase menuEntrada
+																								//
 		}
+		/*
+		 * Si la opción seleccionada fue la 2 o 'cancelar', simplemente no se genera el
+		 * ticket y se muestra de nuevo el menu principal.
+		 */
 		else if(opt == 2)
 		{	
-			System.out.println("Regresando al menu previo!");		
-			mn.elegir();
+			System.out.println("\n\tRegresando al menu previo!\n");		
+			selectPeli();																		// Llamamos a la funcion verMenu de la clase menuEntrada
 		}
+		/*
+		 * Si la opción seleccionada fue la 3ª, simplemente se regresa al menú principal.
+		 */
 		else if(opt == 3)
 		{
-			System.out.println("Regresando al menu principal!");
-			mn.elegir();
+			System.out.println("\n\tRegresando al menu principal!\n");
+			mE.verMenu();
 		}
+		/*
+		 * Prinmero comprobamos que la opcion elegida sea uno de los valores validos definidos
+		 */
 		else if(opt != 0 || opt != 1 || opt != 3)
 		{
 			System.out.println("\n\n\n\n Opcion no valida!\n Intentelo nuevamente\n\n\n");
-			selPeli();
-		}
-		
-		
+			selectPeli();
+		}		
 	}
-	
 
 	/*
 	 * 	(non-Javadoc)

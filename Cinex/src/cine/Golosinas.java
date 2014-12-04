@@ -23,7 +23,7 @@ public class Golosinas
 	
 	private Eleccion elegir = new Eleccion();												// Hacemos una instancia de la clase elegir
 	protected int opt;																		// Aqui se almacena la eleccion.
-	private menuEntrada mn = new menuEntrada(null, null, 0, 0);								// Instanciamos la clase menuEntrada
+	//private menuEntrada mn = new menuEntrada(null, null, 0, 0);								// Instanciamos la clase menuEntrada
 	private boleto tkt = new boleto(null, null, 0, 0);										// Instanciamos la clase boleto
 	
 	protected void golosina()
@@ -88,7 +88,7 @@ public class Golosinas
 				//System.out.println(compra);
 				tkt.boletoGolosina(compra);
 				System.out.println("Regresando al menú principal!");				
-				mn.elegir(); 																				// Llamamos al metodo elegir de la clase menuEntrada
+				//mn.verMenu(); 																				// Llamamos al metodo elegir de la clase menuEntrada
 				
 			}
 		}
@@ -104,7 +104,7 @@ public class Golosinas
 			//System.out.println(compra);
 			tkt.boletoGolosina(compra);
 			System.out.println("Regresando al menú principal!");				
-			mn.elegir(); 																				// Llamamos al metodo elegir de la clase menuEntrada
+			//mn.verMenu(); 																				// Llamamos al metodo elegir de la clase menuEntrada
 				
 		}
 	}

@@ -1,12 +1,15 @@
 package cine;
 
-import java.util.Scanner;
-
 public class menuEntrada extends Pelicula
 {
 	
-	protected int opcion;
-	Scanner lectura = new Scanner(System.in);
+	estreno verEstrenos = new estreno(null, null, 0, 0);									// Instanciamos  la clase estrenos.
+	Golosinas golosina = new Golosinas();											// Creamos una instancia de Golosinas
+
+	
+	Eleccion leer = new Eleccion();										// Instanciamos la clase Eleccion
+	int opt;
+	
 	
 	
 	public menuEntrada(String titulo, String director, int duracion, int costo) 
@@ -33,42 +36,61 @@ public class menuEntrada extends Pelicula
 	
 	/*
 	 * Leemos la entrada desde el teclado de la selección que ha hecho el usuario.
-	 * Esto es un metodo de servicio ;) 
+	 * Esto es un metodo de servicio ) 
 	 */
-	public void elegir()
+	public void verMenu()
 	{
 		menuPrincipal();
 		
 		System.out.println("Seleccione su opcion: \n ");
 		
-		opcion = lectura.nextInt();																	// Leemos la opcion del usuario.
-																						// Cerramos la lectura de datos
-		
-		estreno ver = new estreno(null, null, 0, 0);												// Instanciamos  la clase estrenos.
-		Golosinas golosina = new Golosinas();											// Creamos una instancia de Golosinas
-	
-		
-		// Comenzamos a comparar la opcion seleccionada.
-		if (opcion == 1) 
+		opt = leer.elegir();															// Leemos la opcion del usuario, por medio del metodo elegir
+																						// de la clase Eleccion
+		/*
+		 * Si se ha seleccionado la opcion 1 o sea, ver los estrenos 
+		 * procedemos con el primer 'if' que nos mostrara la lista de 
+		 * estrenos
+		 */
+		if (opt == 1) 
 		{
 			System.out.println("Ok, ahora se listaran los estrenos!\n");
-			ver.selPeli();
-			
-			
+			verEstrenos.selectPeli();														// Llamamos al metodo selPelis de la clase estrenos
 		}
-		else if (opcion == 2)
+		/*
+		 * Si se ha seleccionado la opcion 2 o sea, ver la cartelera general 
+		 * procedemos con el primer 'else if' que muestra la cartelera general
+		 */
+		else if (opt == 2)
 		{
-			System.out.println("Ok, ahora se listara toda la cartelera!");
-			System.out.println("Regresando al menú principal.");
+			System.out.println("No implementado aun!");
+			
+			System.out.println("Regresando al menú principal.");							// Opcion temporal
+			verMenu();
 		}
-		else if (opcion == 3)
+		/*
+		 * Si se ha seleccionado la opcion 2 o sea, ver la cartelera general 
+		 * procedemos con el segundo 'else if' que muestra el menu de golosinas.
+		 */
+		else if (opt == 3)
 		{
-			System.out.println("Ok, ahora se listaran las golosinas!");
-			
-			golosina.cargar();
-			
-				
+			System.out.println("\n");
+					
+			golosina.cargar();																// Metodo cargar de la clase Golosinas
 		}
+		/*
+		 * Comprobamos que la opcion seleccionada sea valida
+		 */
+		else if(opt != 1 || opt != 2 || opt != 3)
+		{
+			System.out.println("Opcion no valida, intente nuevamente!");		
+			verMenu(); 																		// Llamada recursiva a la funcion verMenu
+		}
+	}
+	
+	@Override
+	public String toString()
+	{
+		return "Selecciona una da las opciones del menú general";
 	}
 
 
