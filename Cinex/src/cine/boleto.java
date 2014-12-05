@@ -7,6 +7,7 @@ import java.util.ArrayList;
 public class boleto extends Pelicula
 {
 	
+	private String ticket = "No ";
 	
 	public boleto(String titulo, String director, int duracion, int costo) 
 	{
@@ -14,6 +15,10 @@ public class boleto extends Pelicula
 		// TODO Auto-generated constructor stub
 	}
 	
+	/*
+	 * Metodo para generar el ticket de una pelicula.
+	 * Recibe como parametros un arrayList 
+	 */
 	public void boletoPelicula()
 	{
 		
@@ -52,7 +57,7 @@ public class boleto extends Pelicula
 	@Override
 	public String toString()
 	{
-		return "\n Disfrute su pelicula!!";
+		return "\n Generando boleto: " + ticket + ", disfrute su pelicula";
 		
 	}
 }

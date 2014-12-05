@@ -7,19 +7,23 @@ public class Eleccion
 	Scanner leer = new Scanner(System.in);										// Hacemos una instancia de Scanner
 	int opt;																	// Variable en la que se almacena la lectura
 	
-	
+	/*
+	 * Este metodo esta simplemenete pensado para leer un entero, que posteriormente se 
+	 * retornara a la funcion desde la que se invoque. 
+	 */
 	public int elegir()
 	{
-		try
+		
+		try																								// Intentamos hacer lalectura
 		{
 		System.out.println("\nSeleccione del menú:");
-		opt = leer.nextInt();
+		opt = leer.nextInt();																			// Leemos y almacenamos un entero 
 		}
-		catch(Exception e)
+		catch(Exception e)																				// Se captura y procesa cualquier excepcion que ocurra
 		{
-			System.out.println("Erro: "+e);
+			System.out.println("Erro: "+e);																// Se indica el error y suscarateristicas.
 		}
-		return opt;
+		return opt;																						// Si todo fue bien, se retorna el entero leido.
 		
 	}
 	
